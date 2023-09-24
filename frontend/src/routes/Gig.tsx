@@ -86,7 +86,7 @@ function GigPage () {
                 </div>
                 <div className="panel">
                   <p className="panel-heading">
-                    Time travel collection point
+                    Point
                   </p>
                   <div className="panel-block">
                     <a href={mapUrl(gig.collectionPoint)} target="_blank" rel="noreferrer">
@@ -102,7 +102,7 @@ function GigPage () {
                     {gig.date}, {gig.collectionTime}&nbsp;<small>Local time</small>
                   </div>
                 </div>
-                <a href="#buy" className="button is-outlined is-link">Buy ticket</a>
+                <a href="#buy" className="button is-outlined is-link">Buy product</a>
               </div>
             </div >
           </section >

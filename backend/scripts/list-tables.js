@@ -1,3 +1,4 @@
+// backend/scripts/list-tables.js
 import { DynamoDBClient, ListTablesCommand } from '@aws-sdk/client-dynamodb'
 
 const client = new DynamoDBClient({})

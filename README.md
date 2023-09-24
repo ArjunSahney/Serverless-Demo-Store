@@ -1,106 +1,93 @@
-# Serverless e-commerce workshop
+# Serverless Retail Demo Store
+This codebase is for a sample e-commerce store used for demo purposes. The code features basic Lambda functions for products, while the UI is uploaded to an S3 bucket. The following code was largely adapted from FourTheorem and AWS-Samples for Sedai -- an autonomous cloud cost optimization software. 
 
-[![Test](https://github.com/fourTheorem/serverless-ecommerce-workshop/actions/workflows/test.yml/badge.svg)](https://github.com/fourTheorem/serverless-ecommerce-workshop/actions/workflows/test.yml)
+# Deployment Steps: 
 
-A workshop to learn how to create a simple serverless e-commerce and deploying it on AWS
-
----
-
-## What are we going to build?
-
-![A screenshot of TimelessMusic](./screenshot.png)
-
-It turns out we have accidentally discovered time travel! 😱
-
-There is only one rule though: **we cannot use time travel to bet or play the lottery**! 😖
-
-So, how can we profit from this amazing discovery? 🤔
-
-Well, I have an idea: since we are cloud engineers and entrepreneurs, why don't we build a startup that allows music fans to go back in time and attend some of the concerts that made the history of music?
-
-Sounds cool, right?
-
-In this workshop we will be building **TimelessMusic**, a serverless e-commerce to sell the tickets for our music-time-travel business! Are you ready to get rich? 🤑
-
-> **Warning**
-> We can't promise you'll get (economically) rich with serverless, but taking this workshop will certainly _enrich_ your skills. And who knows where that might lead you...
-
-
-## Learnings
-
-This workshop will explore the following topics
-
-- How to host a Single Page Application (SPA) on S3
-- How to write APIs with AWS Lambda and API Gateway
-- How to use DynamoDB to store the data for your APIs
-- How to process forms with AWS Lambda
-- How to store unit of works on SQS
-- How to create background workers with AWS Lambda
-- ... and a lot of other useful things, like:
-  - Serverless Application Model (SAM)
-  - AWS Roles, Policies and the security model in general
-  - The AWS Command Line interface
-  - Some bash tricks
-  - Some other cool details about AWS and Serverless
-
-
-### Disclaimers
-
-  1. While we are going to build a fully functional application (somewhat), this application is not to be considered _production-ready™️_. We'll cut a few corners along the way.
-  2. The goal is to learn the basics about AWS and Serverless (and few other related things), but we are not going to be comprehensive. We will favour an hands-on approach where possible.
-
-
-## Requirements
-
-Before getting started, make sure you have the following requirements:
-
- - Your own [AWS account](https://aws.amazon.com/free)
- - An AWS user with Admin access and Programmatic Access
- - The [AWS Command Line Interface](https://aws.amazon.com/cli) installed and configured for your user
- - [Node.js](https://nodejs.org) (v16 or higher)
- - A [bash](https://www.gnu.org/software/bash) compatible shell
- - [Docker](https://www.docker.com/)
- - [SAM (Serverless Application Model)](https://aws.amazon.com/serverless/sam/)
-
-To make sure you have everything configured correctly, you can run the following command in your terminal:
-
-```bash
-aws sts get-caller-identity
+```
+npm run build --workspace=frontend
 ```
 
-If all went well, you should see something like this:
+```
+export FRONTEND_BUCKET=retaildemostore
+```
 
-```json
+```
+aws s3 mb s3://$FRONTEND_BUCKET
+```
+
+```
+aws s3 cp frontend/dist "s3://$FRONTEND_BUCKET" --recursive
+```
+
+```
 {
-    "UserId": "XYZ",
-    "Account": "123456789012",
-    "Arn": "arn:aws:iam::123456789012:username"
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::<FRONTEND_BUCKET>/*"
+      ]
+    }
+  ]
+}
+```
+```
+aws s3api put-bucket-policy --bucket $FRONTEND_BUCKET --policy file://policy.json
+```
+
+```
+aws dynamodb create-table \
+  --table-name product-table \
+  --attribute-definitions AttributeName=id,AttributeType=S \
+  --key-schema AttributeName=id,KeyType=HASH \
+  --billing-mode PAY_PER_REQUEST
+```
+
+```
+aws dynamodb batch-write-item --request-items file://assets/load-gig.json
+```
+
+```
+cd backend/
+```
+
+```
+npm i --save @aws-sdk/client-dynamodb
+```
+
+```
+npm i --save @aws-sdk/lib-dynamodb
+```
+
+```
+npm i --save @aws-sdk/client-sqs
+```
+
+```
+sam validate
+```
+
+```
+sam build --beta-features
+```
+
+```
+same deploy --guided
+```
+
+You should recieve and API ID as an output. From that, create a file called settings.json:
+
+```
+{
+  "apiBaseUrl": "https://<restapiid>.execute-api.eu-west-1.amazonaws.com/Prod"
 }
 ```
 
-Finally, make sure to **clone this repository** locally and run:
-
-```bash
-npm install
 ```
-
-To install all the necessary dependencies.
-
-
-## Getting started
-
-We will start by deploying a static website (our ecommerce frontend) to AWS!
-
-[➡️ Lesson 01 - Deploying the frontend](/lessons/01-deploying-the-frontend/README.md)
-
-
-## Contributing
-
-In the spirit of Open Source, everyone is very welcome to contribute to this project.
-You can contribute just by submitting bugs or suggesting improvements by
-[opening an issue on GitHub](https://github.com/fourTheorem/serverless-ecommerce-workshop/issues) or by [submitting a PR](https://github.com/fourTheorem/serverless-ecommerce-workshop/pulls).
-
-
-## License
-
-Licensed under [MIT License](LICENSE). © fourTheorem
+aws s3 cp settings.json "s3://$FRONTEND_BUCKET/.well-known/settings.json"
+```

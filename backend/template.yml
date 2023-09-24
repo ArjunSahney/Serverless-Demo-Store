@@ -1,18 +1,79 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
-Description: Backend api for TimelessMusic project
+Description: Backend api for Retail Demo Store 
 
 Globals:
+  Api:
+    Cors:
+      AllowMethods: "'GET,POST,OPTIONS'"
+      AllowHeaders: "'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range'"
+      AllowOrigin: "'http://retaildemostore-frontend.s3-website-us-east-1.amazonaws.com'" 
+
   Function:
     Timeout: 3
     Runtime: nodejs16.x
 
 Resources:
-  listGigs:
+  worker:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: ./
-      Handler: app.listGigs
+      Handler: app.worker
+      Events:
+        SQSQueueEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt productPurchasedQueue.Arn
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: "es2020"
+        Sourcemap: true
+        EntryPoints:
+          - app.ts
+  purchase:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: app.purchase
+      Environment:
+        Variables:
+          SQS_QUEUE_URL: !Ref "productPurchasedQueue"     
+      Policies:
+        - Statement:
+            - Sid: PurchaseAllowSQSSendMessage
+              Effect: Allow
+              Action:
+                - sqs:SendMessage
+              Resource: !GetAtt "productPurchasedQueue.Arn"
+      Events:
+        Endpoint:
+          Type: Api
+          Properties:
+            Path: /purchase
+            Method: post
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: "es2020"
+        Sourcemap: true
+        EntryPoints:
+          - app.ts
+
+  listProducts:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: app.listProducts
+      Policies:
+        - Statement:
+            - Sid: ListGigsAllowDDBScan
+              Effect: Allow
+              Action:
+                - dynamodb:Scan
+              Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/gig"
       Events:
         Endpoint:
           Type: Api
@@ -28,11 +89,18 @@ Resources:
         EntryPoints:
           - app.ts
 
-  gig:
+  products:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: ./
-      Handler: app.gig
+      Handler: app.products
+      Policies:
+        - Statement:
+            - Sid: GigsAllowDDBGetItem
+              Effect: Allow
+              Action:
+                - dynamodb:GetItem
+              Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/gig"
       Events:
         Endpoint:
           Type: Api
@@ -48,9 +116,46 @@ Resources:
         EntryPoints:
           - app.ts
 
+  searchProducts:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: app.searchProducts
+      Policies:
+        - Statement:
+            - Sid: SearchProductsAllowDDBScan
+              Effect: Allow
+              Action:
+                - dynamodb:Scan
+              Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/gig"
+      Events:
+        Endpoint:
+          Type: Api
+          Properties:
+            Path: /search
+            Method: get
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: "es2020"
+        Sourcemap: true
+        EntryPoints:
+          - app.ts
+
+  productPurchasedQueue:
+    Type: "AWS::SQS::Queue"
+    Properties:
+      QueueName: "product-purchase"
 Outputs:
   endpoint:
-    Description: The API Gateway endpoint for TimelessMusic
+    Description: The API Gateway endpoint for Retail Demo Store
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
     Export:
-      Name: timelessmusic:api-endpoint
+      Name: retaildemostore:api-endpoint
+
+  queueUrl:
+    Description: The URL of the product purchase queue
+    Value: !Ref "productPurchasedQueue"
+    Export:
+      Name: retaildemostore:sqs-queue

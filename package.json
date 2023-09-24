@@ -31,5 +31,8 @@
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.410.0"
   }
 }

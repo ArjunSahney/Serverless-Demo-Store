@@ -9,7 +9,7 @@ function Header () {
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item">
-            <img src={logoWhite} alt="TimelessMusic" height="28" style={{ height: '2em' }} />
+            <img src={logoWhite} alt="RetailDemo Store" height="28" style={{ height: '2em' }} />
           </Link>
         </div>
       </div>
@@ -18,10 +18,10 @@ function Header () {
       <div className="container" style={{ backgroundImage: `url(${heroBg})`, backgroundPosition: 'right center', backgroundRepeat: 'no-repeat' }}>
         <div className="hero-body">
           <h1 className="title" style={{ color: '#FFF' }}>
-            We have the power of time and the love for music
+            All of your favourite products in one place
           </h1>
           <h2 className="subtitle" style={{ color: '#ccc' }}>
-            Travel back in time to attend gigs that made history
+            Focus on products for you  
           </h2>
         </div>
       </div>

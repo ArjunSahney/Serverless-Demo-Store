@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "Frontend app for timeless music",
+  "description": "Frontend app for Retail Demo Store",
   "private": true,
   "scripts": {
     "dev": "vite",

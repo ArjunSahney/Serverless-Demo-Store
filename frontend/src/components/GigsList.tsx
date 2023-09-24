@@ -9,7 +9,7 @@ function GigsList (props: { gigs: Gig[] }) {
     <div>
       <div>
         <div className="content">
-          <h3>There are {gigs.length} gigs currently available</h3>
+          <h3>There are {gigs.length} products currently available</h3>
         </div>
       </div>
 

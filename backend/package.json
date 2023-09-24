@@ -10,9 +10,9 @@
     "compile": "npm run build"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.95.0",
+    "@aws-sdk/client-dynamodb": "^3.409.0",
     "@aws-sdk/client-sqs": "^3.95.0",
-    "@aws-sdk/lib-dynamodb": "^3.95.0",
+    "@aws-sdk/lib-dynamodb": "^3.409.0",
     "nodemailer": "^6.7.5"
   },
   "devDependencies": {

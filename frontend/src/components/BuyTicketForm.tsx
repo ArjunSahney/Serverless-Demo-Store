@@ -287,8 +287,8 @@ function BuyTicketForm (props: { gig: Gig }) {
 
       {paymentResult && <div className="notification is-primary">
         <button className="delete" onClick={e => { e.preventDefault(); setPaymentResult(undefined) }}></button>
-        <p>Payment processed correctly! you should receive an email with your ticket shortly.</p>
-        <p><small>You can buy a new ticket by entering a new name and a new email</small></p>
+        <p>Payment processed correctly! you should receive an email with your product shortly.</p>
+        <p><small>You can buy another product new name and a new email</small></p>
       </div>}
 
       {paymentError && <div className="notification is-danger">
