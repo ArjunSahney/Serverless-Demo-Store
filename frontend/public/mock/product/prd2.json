@@ -1,0 +1,11 @@
+{
+  "id": "prd2",
+  "productName": "Bowl",
+  "year": "1961",
+  "date": "2019-01-013",
+  "collectionPoint": "New York, NY 10001, USA",
+  "collectionTime": "14:30",
+  "description": "This beautiful bowl seamlessly combines style and functionality, making it a versatile addition to your kitchen or dining table. Crafted with care from high-quality materials, it exudes an understated elegance. Its ample size and deep design make it perfect for serving salads, soups, or displaying fresh fruit. Whether you're hosting a dinner party or enjoying a quiet meal at home, this bowl adds a touch of sophistication to any occasion.",
+  "image": "../images/Bowl.jpg",
+  "price": "800"
+}

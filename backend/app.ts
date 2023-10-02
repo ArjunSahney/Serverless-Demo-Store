@@ -26,7 +26,7 @@ export async function listProducts(event: APIGatewayProxyEvent): Promise<APIGate
     memoryIntensiveOperation();
 
     const command = new ScanCommand({
-        TableName: 'gig'
+        TableName: 'product'
     });
 
     try {
@@ -58,7 +58,7 @@ export async function products(event: APIGatewayProxyEvent): Promise<APIGatewayP
     const { id } = event.pathParameters;
 
     const command = new GetCommand({
-        TableName: 'gig',
+        TableName: 'product',
         Key: { id }
     });
 
@@ -96,8 +96,8 @@ export async function products(event: APIGatewayProxyEvent): Promise<APIGatewayP
     }
 }
 
-type BuyTicketFormData = {
-    gigId: string,
+type BuyProductFormData = {
+    ProductId: string,
     name: string,
     email: string,
     nameOnCard: string,
@@ -110,7 +110,7 @@ type BuyTicketFormData = {
 
 export async function purchase(event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> {
     memoryIntensiveOperation();
-    let data: BuyTicketFormData
+    let data: BuyProductFormData
 
     try {
       data = JSON.parse(event.body)
@@ -127,7 +127,7 @@ export async function purchase(event: APIGatewayProxyEvent): Promise<APIGatewayP
   
     const errors = []
   
-    for (const field of ['gigId', 'name', 'email', 'nameOnCard', 'cardNumber', 'cardExpiryMonth', 'cardExpiryYear', 'cardCVC', 'disclaimerAccepted']) {
+    for (const field of ['productId', 'name', 'email', 'nameOnCard', 'cardNumber', 'cardExpiryMonth', 'cardExpiryYear', 'cardCVC', 'disclaimerAccepted']) {
       if (!data[field]) {
         errors.push(`Missing or invalid field "${field}"`)
       }
@@ -148,7 +148,7 @@ export async function purchase(event: APIGatewayProxyEvent): Promise<APIGatewayP
     const purchaseData = {
       name: data.name,
       email: data.email,
-      gigId: data.gigId,
+      productId: data.productId,
       ticketId
     }
   
@@ -172,7 +172,7 @@ export async function purchase(event: APIGatewayProxyEvent): Promise<APIGatewayP
 type PurchaseRecord = {
   name: string,
   email: string,
-  gigId: string,
+  productId: string,
   ticketId: string
 }
 
@@ -192,7 +192,7 @@ export async function worker (event: SQSEvent) {
     const data = JSON.parse(record.body) as PurchaseRecord
 
     const emailMessage = `Hey ${data.name},
-you are going back in time to enjoy one of the greatest concerts in the history of music! 🤘
+
 
 This is the secret code that will give you access to our time travel collection point:
 
@@ -204,15 +204,15 @@ Be sure to show it to our staff at entrance.
 
 We already look forward (or maybe backward) to having you there, it's going to be epic!
 
-— Your friendly Timeless Music staff
+
 
 PS: remember that is forbidden to place bets or do any other action that might substantially
 increase your net worth while time travelling. Travel safe!`
 
     const info = await transporter.sendMail({
-      from: '"⏱ Timeless Music" <tickets@timelessmusic.com>',
+      from: '"⏱ Timeless products" <tickets@timelessproducts.com>',
       to: data.email,
-      subject: '🎟 Your Timeless Music ticket',
+      subject: '🎟 Your Timeless products ticket',
       text: emailMessage
     })
 
@@ -238,7 +238,7 @@ export async function searchProducts(event: APIGatewayProxyEvent): Promise<APIGa
     }
 
     const command = new ScanCommand({
-        TableName: 'gig',
+        TableName: 'product',
         FilterExpression: "contains(productName, :queryVal)",
         ExpressionAttributeValues: {
             ":queryVal": query

@@ -1,12 +1,12 @@
 {
-  "gig": [
+  "products": [
     {
       "PutRequest": {
         "Item": {
           "id": {
             "S": "the-queen-new-york-1977"
           },
-          "bandName": {
+          "productName": {
             "S": "Fluffy Pillow"
           },
           "city": {
@@ -54,7 +54,7 @@
           "id": {
             "S": "jimi-hendrix-berkeley-1970"
           },
-          "bandName": {
+          "productName": {
             "S": "Vintage CD Collection"
           },
           "city": {
@@ -85,7 +85,7 @@
             "N": "0"
           },
           "description": {
-            "S": "Rediscover the classics with our Vintage CD Collection. Immerse yourself in the timeless melodies of music history."
+            "S": "Rediscover the classics with our Vintage CD Collection. Immerse yourself in the timeless melodies of history."
           },
           "image": {
             "S": "jimi-hendrix.jpg"
@@ -102,7 +102,7 @@
           "id": {
             "S": "the-beach-boys-long-beach-1961"
           },
-          "bandName": {
+          "productName": {
             "S": "Screwdriver"
           },
           "city": {
@@ -150,7 +150,7 @@
           "id": {
             "S": "fleetwood-mac-st-luis-1979"
           },
-          "bandName": {
+          "productName": {
             "S": "Hammer"
           },
           "city": {
@@ -198,7 +198,7 @@
           "id": {
             "S": "joy-division-london-1979"
           },
-          "bandName": {
+          "productName": {
             "S": "Mr. Potatohead figurine"
           },
           "city": {
@@ -246,7 +246,7 @@
           "id": {
             "S": "nirvana-cork-1991"
           },
-          "bandName": {
+          "productName": {
             "S": "Watterbottle"
           },
           "city": {
@@ -294,7 +294,7 @@
           "id": {
             "S": "simon-and-garfunkel-new-york-1981"
           },
-          "bandName": {
+          "productName": {
             "S": "Watch"
           },
           "city": {
@@ -342,7 +342,7 @@
           "id": {
             "S": "stone-temple-irvine-2012"
           },
-          "bandName": {
+          "productName": {
             "S": "Glass Bowl"
           },
           "city": {
@@ -390,7 +390,7 @@
           "id": {
             "S": "the-beatles-new-york-1965"
           },
-          "bandName": {
+          "productName": {
             "S": "Picture frame"
           },
           "city": {
@@ -438,7 +438,7 @@
           "id": {
             "S": "the-doors-miami-1969"
           },
-          "bandName": {
+          "productName": {
             "S": "Toy Figurine"
           },
           "city": {
@@ -486,7 +486,7 @@
           "id": {
             "S": "ramones-davis-1979"
           },
-          "bandName": {
+          "productName": {
             "S": "Scissors"
           },
           "city": {
@@ -534,7 +534,7 @@
           "id": {
             "S": "soundgarden-detroit-2017"
           },
-          "bandName": {
+          "productName": {
             "S": "Headphones"
           },
           "city": {
@@ -565,7 +565,7 @@
             "N": "0"
           },
           "description": {
-            "S": "Experience music like never before with our premium headphones. Immerse yourself in crystal-clear sound and deep bass, all in a sleek and comfortable design."
+            "S": "Experience like never before with our premium headphones. Immerse yourself in crystal-clear sound and deep bass, all in a sleek and comfortable design."
           },
           "image": {
             "S": "soundgarden.jpg"

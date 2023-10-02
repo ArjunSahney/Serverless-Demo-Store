@@ -1,7 +1,7 @@
 [
   {
     "id": "the-queen-new-york-1977",
-    "bandName": "Fluffy Pillow",
+    "productName": "Fluffy Pillow",
     "city": "",
     "year": "",
     "date": "",
@@ -17,7 +17,7 @@
   },
   {
     "id": "jimi-hendrix-berkeley-1970",
-    "bandName": "Vintage CD Collection",
+    "productName": "Vintage CD Collection",
     "city": "",
     "year": "",
     "date": "",
@@ -27,13 +27,13 @@
     "collectionTime": "",
     "originalDate": "",
     "capacity": 1200,
-    "description": "Rediscover the classics with our Vintage CD Collection. Immerse yourself in the timeless melodies of music history. From iconic rock anthems to soulful ballads, this curated collection brings the past to life. Elevate your music experience with authentic, high-quality CDs. Embrace nostalgia and collect your favorite tracks today.",
+    "description": "Rediscover the classics with our Vintage CD Collection. Immerse yourself in the timeless melodies of  history. From iconic rock anthems to soulful ballads, this curated collection brings the past to life. Elevate your  experience with authentic, high-quality CDs. Embrace nostalgia and collect your favorite tracks today.",
     "image": "jimi-hendrix.jpg",
     "price": "35.00"
   },
   {
     "id": "the-beach-boys-long-beach-1961",
-    "bandName": "Screwdriver",
+    "productName": "Screwdriver",
     "city": "",
     "year": "",
     "date": "",
@@ -49,7 +49,7 @@
   },
   {
     "id": "fleetwood-mac-st-luis-1979",
-    "bandName": "Hammer",
+    "productName": "Hammer",
     "city": "",
     "year": "",
     "date": "",
@@ -64,7 +64,7 @@
   },
   {
     "id": "joy-division-london-1979",
-    "bandName": "Mr. Potatohead figurine",
+    "productName": "Mr. Potatohead figurine",
     "city": "",
     "year": "",
     "date": "",
@@ -80,7 +80,7 @@
   },
   {
     "id": "nirvana-cork-1991",
-    "bandName": "Waterbottle",
+    "productName": "Waterbottle",
     "city": "",
     "year": "",
     "date": "",
@@ -96,7 +96,7 @@
   },
   {
     "id": "simon-and-garfunkel-new-york-1981",
-    "bandName": "Watch",
+    "productName": "Watch",
     "city": "",
     "year": "",
     "date": "",
@@ -112,7 +112,7 @@
   },
   {
     "id": "stone-temple-irvine-2012",
-    "bandName": "Glass Bowl",
+    "productName": "Glass Bowl",
     "city": "",
     "year": "",
     "date": "",
@@ -128,7 +128,7 @@
   },
   {
     "id": "the-beatles-new-york-1965",
-    "bandName": "Picture frame",
+    "productName": "Picture frame",
     "city": "",
     "year": "",
     "date": "",
@@ -144,7 +144,7 @@
   },
   {
     "id": "the-doors-miami-1969",
-    "bandName": "Toy Figurine",
+    "productName": "Toy Figurine",
     "city": "",
     "year": "",
     "date": "",
@@ -160,7 +160,7 @@
   },
   {
     "id": "ramones-davis-1979",
-    "bandName": "Scissors",
+    "productName": "Scissors",
     "city": "",
     "year": "",
     "date": "",
@@ -176,7 +176,7 @@
   },
   {
     "id": "soundgarden-detroit-2017",
-    "bandName": "Headphones",
+    "productName": "Headphones",
     "city": "",
     "year": "",
     "date": "",
@@ -186,7 +186,7 @@
     "collectionTime": "",
     "originalDate": "",
     "capacity": 2300,
-    "description": "Experience music like never before with our premium headphones. Immerse yourself in crystal-clear sound and deep bass, all in a sleek and comfortable design. Whether you're on the go or relaxing at home, our headphones provide the perfect audio companion. Elevate your listening experience and discover the true essence of your favorite tunes. Upgrade to our headphones and unlock a world of superior sound quality.",
+    "description": "Experience  like never before with our premium headphones. Immerse yourself in crystal-clear sound and deep bass, all in a sleek and comfortable design. Whether you're on the go or relaxing at home, our headphones provide the perfect audio companion. Elevate your listening experience and discover the true essence of your favorite tunes. Upgrade to our headphones and unlock a world of superior sound quality.",
     "image": "soundgarden.jpg",
     "price": "65.00"
   }

@@ -4,7 +4,7 @@ import logo from '../images/logo.svg'
 function Footer () {
   return <footer className="footer" style={{ margin: '4em 0 0 0' }}>
     <div className="container">
-      <p><img src={logo} style={{ height: '1.8em' }} /></p>
+      <p><img src={logo} style={{ height: '9rem' }} /></p>
       <div className="columns">
         <div className="column is-3">
           <div className="content">
@@ -16,22 +16,22 @@ function Footer () {
         <div className="column is-3">
           <div className="content">
             <p>
-              <small> The source code is licensed by MIT. </small>
+              <big> The source code is licensed by MIT. </big>
             </p>
           </div>
         </div>
         <div className="column is-3">
           <div className="content">
-            <small>
-              Adapted from a few different technologies. 
-            </small>
+            <big>
+              Adapted from a few different technologies -- thank you to AWS-Samples and FourTheorem.
+            </big>
           </div>
         </div>
         <div className="column is-3">
           <div className="content">
-            <small>
+            <big>
               Hope you enjoyed! 
-            </small>
+            </big>
           </div>
         </div>
       </div>

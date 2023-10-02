@@ -1,13 +1,13 @@
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb'
 import { DynamoDBDocument, GetCommand } from '@aws-sdk/lib-dynamodb'
 
-const gigId = process.argv[2]
+const productId = process.argv[2]
 
 const client = new DynamoDBClient({})
 const docClient = DynamoDBDocument.from(client)
 const command = new GetCommand({
-  TableName: 'gig',
-  Key: { id: gigId }
+  TableName: 'product',
+  Key: { id: productId }
 })
 
 try {

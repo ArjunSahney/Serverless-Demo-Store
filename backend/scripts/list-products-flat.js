@@ -4,7 +4,7 @@ import { DynamoDBDocument, ScanCommand } from '@aws-sdk/lib-dynamodb'
 const client = new DynamoDBClient({})
 const docClient = DynamoDBDocument.from(client)
 const command = new ScanCommand({
-  TableName: 'gig'
+  TableName: 'product'
 })
 
 try {

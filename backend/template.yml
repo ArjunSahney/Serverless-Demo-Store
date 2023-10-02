@@ -69,16 +69,16 @@ Resources:
       Handler: app.listProducts
       Policies:
         - Statement:
-            - Sid: ListGigsAllowDDBScan
+            - Sid: ListproductsAllowDDBScan
               Effect: Allow
               Action:
                 - dynamodb:Scan
-              Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/gig"
+              Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/product"
       Events:
         Endpoint:
           Type: Api
           Properties:
-            Path: /gigs
+            Path: /products
             Method: get
     Metadata:
       BuildMethod: esbuild
@@ -96,16 +96,16 @@ Resources:
       Handler: app.products
       Policies:
         - Statement:
-            - Sid: GigsAllowDDBGetItem
+            - Sid: productsAllowDDBGetItem
               Effect: Allow
               Action:
                 - dynamodb:GetItem
-              Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/gig"
+              Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/product"
       Events:
         Endpoint:
           Type: Api
           Properties:
-            Path: /gigs/{id}
+            Path: /products/{id}
             Method: get
     Metadata:
       BuildMethod: esbuild
@@ -127,7 +127,7 @@ Resources:
               Effect: Allow
               Action:
                 - dynamodb:Scan
-              Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/gig"
+              Resource: !Sub "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/product"
       Events:
         Endpoint:
           Type: Api

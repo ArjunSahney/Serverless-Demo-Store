@@ -2,7 +2,7 @@ import { DynamoDBClient, ScanCommand } from '@aws-sdk/client-dynamodb'
 
 const client = new DynamoDBClient({})
 const command = new ScanCommand({
-  TableName: 'gig'
+  TableName: 'product'
 })
 
 try {

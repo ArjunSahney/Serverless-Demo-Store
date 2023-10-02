@@ -1,10 +1,10 @@
 import React, { Fragment, useContext, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { SettingsContext } from '../settings'
-import { Gig } from '../types'
+import { ProductTypes } from '../types'
 
-type BuyTicketFormData = {
-  gigId: string,
+type BuyProductFormData = {
+  productId: string,
   name: string,
   email: string,
   nameOnCard: string,
@@ -36,10 +36,10 @@ const months = {
   Dec: 12
 }
 
-function BuyTicketForm (props: { gig: Gig }) {
-  const { gig } = props
+function BuyProductForm (props: { product: ProductTypes }) {
+  const { product } = props
   const settings = useContext(SettingsContext)
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm<BuyTicketFormData>()
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm<BuyProductFormData>()
 
   const [paymentInProgress, setPaymentInProgress] = useState(false)
   const [paymentResult, setPaymentResult] = useState<{}>()
@@ -60,7 +60,7 @@ function BuyTicketForm (props: { gig: Gig }) {
     })
   }
 
-  const onSubmit: SubmitHandler<BuyTicketFormData> = async (formData) => {
+  const onSubmit: SubmitHandler<BuyProductFormData> = async (formData) => {
     try {
       setPaymentInProgress(true)
       setPaymentResult(undefined)
@@ -110,7 +110,7 @@ function BuyTicketForm (props: { gig: Gig }) {
         <div className="columns">
           <div className="column is-7">
             <div className="content">
-              <h3 id="buy">Buy a ticket ({gig.price} USD)</h3>
+              <h3 id="buy">Buy a Product ({product.price} USD)</h3>
               <a href="#" onClick={fillWithDemoData}>
                 <small>(⚡️ quick fill form)</small>
               </a>
@@ -119,10 +119,10 @@ function BuyTicketForm (props: { gig: Gig }) {
             <hr />
 
             <div className="content">
-              <h4>Ticket info</h4>
+              <h4>Product info</h4>
             </div>
 
-            <input type="hidden" {...register('gigId', { required: true, value: gig.id })} />
+            <input type="hidden" {...register('productId', { required: true, value: product.id })} />
 
             <div className="field">
               <label htmlFor="name" className="label">Owner name</label>
@@ -300,4 +300,4 @@ function BuyTicketForm (props: { gig: Gig }) {
   )
 }
 
-export default BuyTicketForm
+export default BuyProductForm

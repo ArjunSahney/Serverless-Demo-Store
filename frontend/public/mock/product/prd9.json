@@ -1,0 +1,11 @@
+{
+  "id": "prd9",
+  "productName": "Watch",
+  "year": "1961",
+  "date": "2019-01-013",
+  "collectionPoint": "New York, NY 10001, USA",
+  "collectionTime": "14:30",
+  "description": "Welcome to our premier online watch emporium, where timekeeping meets style. Our e-commerce site showcases a stunning collection of watches that blend form and function seamlessly. From classic to contemporary, our selection spans a wide range of designs, ensuring there's a timepiece for every taste. Crafted with precision and using high-quality materials, our watches are reliable and built to last. Whether you're seeking a sophisticated dress watch or a rugged sports companion, our timepieces offer unparalleled elegance and functionality. Elevate your wrist game with a watch from our exquisite collection, and make every moment count in style. Explore our catalog today to find your perfect timekeeping companion.",
+  "image": "../images/Watch.jpg",
+  "price": "1010"
+}

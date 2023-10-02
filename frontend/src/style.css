@@ -413,6 +413,7 @@ print {
   .is-size-7-desktop {
     font-size: .75rem !important
   }
+  
 }
 
 @media screen and (min-width:1216px) {
@@ -502,11 +503,23 @@ print {
   .has-text-centered-touch {
     text-align: center !important
   }
+  .this-signup {
+    display: none !important;
+  }
+  .my-search-container {
+    display: none !important;
+  }
 }
 
 @media screen and (min-width:1024px) {
   .has-text-centered-desktop {
     text-align: center !important
+  }
+  .this-signup {
+    display: block !important;
+  }
+  .my-search-container {
+    display: block !important;
   }
 }
 
@@ -10812,3 +10825,97 @@ print {
 }
 
 /*# sourceMappingURL=bulma.min.css.map */
+
+/* swiper-custom.css */
+.swiper-button-prev {
+  background-color: #fff;
+  padding: 26px 20px;
+  height: 59px;
+  left: 4px;
+  z-index: 9999;
+}
+.swiper-button-prev:after {
+  font-size: 22px !important;
+  color: #000;
+  font-weight: 900;
+}
+.swiper-button-next {
+  background-color: #fff;
+  padding: 26px 20px;
+  height: 59px;
+  left: 4px;
+  z-index: 9999;
+}
+.swiper-button-next:after {
+  font-size: 22px !important;
+  color: #000;
+  font-weight: 900;
+}
+
+.navbar-link.is-active, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:hover {
+  background-color: transparent !important;
+}
+
+select.mySElectee::-ms-expand {
+  display: none !important;
+}
+.mySElectee:not(.is-multiple)::after {
+  display: none !important;
+}
+
+@media screen and (max-width:1023px) {
+  .this-signup {
+    display: none !important;
+  }
+  .my-search-container {
+    display: none !important;
+  }
+  .mySElectee {
+    display: none !important;
+  }
+  .show-on-mobile {
+    display: flex !important;
+  }
+  .main-nav-logo {
+    min-height: 100px;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .this-signup {
+    display: block !important;
+  }
+  .my-search-container {
+    display: flex !important;
+  }
+  .mySElectee {
+    display: flex !important;
+  }
+  .show-on-mobile {
+    display: none !important;
+  }
+  .main-nav-logo {
+    min-height: 130px;
+  }
+}
+a:hover .btnn {
+  background-color: #000  !important;
+}
+ul.search-results {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  background-color: white;
+  z-index: 19;
+  padding: 10px 5px;
+  box-shadow: 0px 3px 6px -2px black;
+  height: 275px;
+  overflow: auto;
+}
+ul.search-results li {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 1px 0;
+  padding: 5px 4px;
+  border-bottom: 1px solid #80808040;
+}

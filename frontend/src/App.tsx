@@ -2,7 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import Gig from './routes/Gig'
+import ProductPage from './routes/ProductPage'
 import Home from './routes/Home'
 import NotFound from './routes/NotFound'
 
@@ -12,7 +12,7 @@ function App () {
 
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/gig/:id" element={<Gig />} />
+      <Route path="/product/:id" element={<ProductPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
 

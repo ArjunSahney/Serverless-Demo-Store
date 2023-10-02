@@ -1,0 +1,113 @@
+[
+  {
+    "id": "prd1",
+    "productName": "Hammar",
+    "year": "1961",
+    "date": "2019-01-013",
+    "collectionPoint": "New York, NY 10001, USA",
+    "collectionTime": "14:30",
+    "description": " The Hammar Professional Hammer is the ultimate tool for those who demand both precision and power in their work. Crafted from high-quality forged steel, it boasts unparalleled durability, ensuring it can tackle even the toughest jobs with ease. Its precision balance and ergonomic grip make it a joy to use, reducing user fatigue. With a versatile dual-head design, anti-vibration technology, and applications spanning from construction to woodworking, the Hammar is the go-to choice for both professionals and DIY enthusiasts. Upgrade your toolbox with the Hammar and experience the difference in every strike.",
+    "image": "../images/hammar.jpg",
+    "price": "1010"
+  },
+  {
+    "id": "prd2",
+    "productName": "Bowl",
+    "year": "1961",
+    "date": "2019-01-013",
+    "collectionPoint": "New York, NY 10001, USA",
+    "collectionTime": "14:30",
+    "description": "This beautiful bowl seamlessly combines style and functionality, making it a versatile addition to your kitchen or dining table. Crafted with care from high-quality materials, it exudes an understated elegance. Its ample size and deep design make it perfect for serving salads, soups, or displaying fresh fruit. Whether you're hosting a dinner party or enjoying a quiet meal at home, this bowl adds a touch of sophistication to any occasion.",
+    "image": "../images/Bowl.jpg",
+    "price": "800"
+  },
+  {
+    "id": "prd3",
+    "productName": "Head Phones",
+    "year": "1961",
+    "date": "2019-01-013",
+    "collectionPoint": "New York, NY 10001, USA",
+    "collectionTime": "14:30",
+    "description": "These headphones redefine your listening experience. With cutting-edge audio technology, they deliver crystal-clear sound and deep, rich bass. Comfort is a priority, featuring plush ear cushions and an adjustable headband. Whether you're on a long flight, commuting, or just relaxing at home, these headphones provide hours of immersive, fatigue-free listening. With a sleek, modern design and wireless connectivity, they're as stylish as they are functional. Elevate your music, movies, and gaming to a whole new level with these premium headphones.",
+    "image": "../images/headphones.jpg",
+    "price": "1210"
+  },
+  {
+    "id": "prd4",
+    "productName": "Pillow",
+    "year": "1961",
+    "date": "2019-01-013",
+    "collectionPoint": "New York, NY 10001, USA",
+    "collectionTime": "14:30",
+    "description": "Welcome to our pillow paradise, where dreams of the coziest, most restful nights come true. Our e-commerce site offers a handpicked selection of premium pillows designed for your ultimate comfort. From soft and huggable to firm and supportive, we have a pillow to match your unique sleep preferences. Crafted from top-quality materials, our pillows promise durability and a touch of luxury. Elevate your sleep experience and wake up refreshed every day with our carefully curated collection. Explore our pillow range and find the perfect one for your sweetest dreams.",
+    "image": "../images/pillow.jpg",
+    "price": "1010"
+  },
+  {
+    "id": "prd5",
+    "productName": "Scissors",
+    "year": "1961",
+    "date": "2019-01-013",
+    "collectionPoint": "New York, NY 10001, USA",
+    "collectionTime": "14:30",
+    "description": "Welcome to your one-stop destination for top-quality scissors that make precision cutting a breeze. Our e-commerce site offers a diverse range of scissors for every cutting need. From crafting to kitchen tasks, we've got you covered with sharp, durable blades that are built to last. Discover ergonomic designs that ensure comfortable use, whether you're a professional or DIY enthusiast. Explore our collection today to find the perfect scissors to enhance your cutting experience. Say goodbye to frustration and hello to effortless cutting with our exceptional scissor lineup.",
+    "image": "../images/scissors.jpg",
+    "price": "1010"
+  },
+  {
+    "id": "prd6",
+    "productName": "Screwdriver",
+    "year": "1961",
+    "date": "2019-01-013",
+    "collectionPoint": "New York, NY 10001, USA",
+    "collectionTime": "14:30",
+    "description": "Welcome to our online store, where quality meets craftsmanship. Our e-commerce site presents a handpicked assortment of precision screwdrivers for all your fixing and assembly needs. From flathead to Phillips and Torx, we offer a variety of sizes and styles to cater to your specific projects. Crafted with durability in mind, our screwdrivers ensure reliable performance and a comfortable grip, making your DIY tasks a breeze. Whether you're a professional or a weekend warrior, our selection of high-quality screwdrivers has you covered. Browse our collection today to find the perfect tool to tackle any screw-driven task with confidence.",
+    "image": "../images/screwdriver.jpg",
+    "price": "1010"
+  },
+  {
+    "id": "prd7",
+    "productName": "Soft Toy",
+    "year": "1961",
+    "date": "2019-01-013",
+    "collectionPoint": "New York, NY 10001, USA",
+    "collectionTime": "14:30",
+    "description": "Welcome to our enchanted world of huggable companions! Our e-commerce site offers an enchanting selection of soft toys that are sure to bring joy to kids and the young at heart. Crafted with the utmost care and attention to detail, our soft toys come in an array of adorable characters and sizes. From cuddly teddy bears to whimsical animals, these plush treasures make perfect gifts for any occasion. Whether you're seeking a comforting bedtime buddy or a delightful gift, our soft toys are here to add a dash of magic to your life. Explore our collection today and find your new cuddly friend to share adventures and sweet moments with.",
+    "image": "../images/softToy.jpg",
+    "price": "1010"
+  },
+  {
+    "id": "prd8",
+    "productName": "Tool kit",
+    "year": "1961",
+    "date": "2019-01-013",
+    "collectionPoint": "New York, NY 10001, USA",
+    "collectionTime": "14:30",
+    "description": "Welcome to our online store, your destination for exceptional tool kits that empower you to tackle any project with confidence. Our e-commerce site offers a carefully curated selection of tool kits, featuring high-quality tools that are designed to last. Whether you're a seasoned pro or a DIY enthusiast, we have the perfect tool set to meet your needs. From wrenches to pliers, screwdrivers to saws, our kits are comprehensive and reliable. With ergonomic handles and durable materials, these tools ensure comfort and longevity. Transform your home improvement, woodworking, or automotive projects with our top-tier tool kits. Explore our collection today and equip yourself for success in all your endeavors.",
+    "image": "../images/toolKit.jpg",
+    "price": "1010"
+  },
+  {
+    "id": "prd9",
+    "productName": "Watch",
+    "year": "1961",
+    "date": "2019-01-013",
+    "collectionPoint": "New York, NY 10001, USA",
+    "collectionTime": "14:30",
+    "description": "Welcome to our premier online watch emporium, where timekeeping meets style. Our e-commerce site showcases a stunning collection of watches that blend form and function seamlessly. From classic to contemporary, our selection spans a wide range of designs, ensuring there's a timepiece for every taste. Crafted with precision and using high-quality materials, our watches are reliable and built to last. Whether you're seeking a sophisticated dress watch or a rugged sports companion, our timepieces offer unparalleled elegance and functionality. Elevate your wrist game with a watch from our exquisite collection, and make every moment count in style. Explore our catalog today to find your perfect timekeeping companion.",
+    "image": "../images/Watch.jpg",
+    "price": "1010"
+  },
+  {
+    "id": "prd10",
+    "productName": "Water Bottle",
+    "year": "1961",
+    "date": "2019-01-013",
+    "collectionPoint": "New York, NY 10001, USA",
+    "collectionTime": "14:30",
+    "description": "Welcome to our online store, your destination for premium water bottles designed to keep you hydrated wherever your adventures take you. Our e-commerce site features a curated selection of high-quality water bottles that blend style and functionality effortlessly. Crafted from durable materials, these bottles are built to withstand the rigors of everyday life, from the gym to the great outdoors. Whether you prefer sleek and modern or vibrant and playful designs, our collection has something for everyone. Stay eco-conscious and well-hydrated with our reusable water bottles. Explore our range today and find your ideal hydration companion to quench your thirst and complement your active lifestyle.",
+    "image": "../images/waterBottle.jpg",
+    "price": "1010"
+  }
+  
+]
